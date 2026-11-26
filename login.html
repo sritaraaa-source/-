@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ | เที่ยวบ้านเรา</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body class="login-page">
+    <!-- ส่วนหัวเว็บไซต์ -->
+    <header class="login-header">
+        <h2 class="site-name">เที่ยวบ้านเรา</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="room.html">ที่เที่ยว</a></li>
+                <li><a href="food.html">อาหาร</a></li>
+                <li><a href="plan.html">วางแผนเที่ยว</a></li>
+                <li><a href="information.html">ข้อมูลการเดินทาง</a></li>
+                <li><a href="login.html" aria-current="page">เข้าสู่ระบบ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- เนื้อหาหน้าล็อกอิน -->
+    <main class="login-main">
+        <section class="login-card">
+            <h1>เข้าสู่ระบบ</h1>
+            <p class="welcome-text">
+                ยินดีต้อนรับสู่เว็บไซต์เที่ยวบ้านเรา
+            </p>
+            <form id="loginForm">
+                <!-- ชื่อผู้ใช้ -->
+                <div class="form-group">
+                    <label for="username">ชื่อผู้ใช้</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="กรอกชื่อผู้ใช้"
+                        required>
+                </div>
+                <!-- รหัสผ่าน -->
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="กรอกรหัสผ่าน"
+                            required>
+                        <button type="button" id="togglePassword">
+                            แสดง
+                        </button>
+                    </div>
+                </div>
+                <!-- ประเภทผู้ใช้งาน -->
+                <div class="form-group">
+                    <label for="userType">ประเภทผู้ใช้งาน</label>
+                    <select id="userType">
+                        <option value="user">สมาชิก (User)</option>
+                        <option value="admin">ผู้ดูแลระบบ (Admin)</option>
+                    </select>
+                </div>
+                <!-- ปุ่มเข้าสู่ระบบ -->
+                <button type="submit" class="login-button">
+                    เข้าสู่ระบบ
+                </button>
+            </form>
+            <!-- บัญชีทดลอง -->
+            <div class="demo-account">
+                <strong>บัญชีทดลองสำหรับฝึกปฏิบัติ</strong>
+                <p>Admin: <b>admin / admin123</b></p>
+            </div>
+        </section>
+    </main>
+    <!-- ส่วนท้ายเว็บไซต์ -->
+    <footer class="login-footer">
+        <p>ศรีธรา ยอดป้าน รหัส 67219100074 | ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+    </footer>
+    <!-- แสดงและซ่อนรหัสผ่าน -->
+    <script>
+        const password = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+        togglePassword.addEventListener("click", function () {
+            if (password.type === "password") {
+                password.type = "text";
+                togglePassword.textContent = "ซ่อน";
+            } else {
+                password.type = "password";
+                togglePassword.textContent = "แสดง";
+            }
+        });
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("กรุณาเชื่อมต่อระบบตรวจสอบบัญชีผู้ใช้งาน");
+        });
+    </script>
+</body>
+</html>
+

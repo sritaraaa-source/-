@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.65;
+    color: #212121;
+    background: #C0E4F6;
+}
+header, footer {
+    padding: 1rem;
+    color: #000000;
+    background: #ADD495;
+}
+.site-name {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav a {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    color: #ffffff;
+    border-radius: 0.35rem;
+}
+nav a:hover, nav a[aria-current="page"] {
+    background: #F8E8D3;
+    color: #174c3c;
+}
+a:focus-visible {
+    outline: 3px solid #c67400;
+    outline-offset: 3px;
+}
+main {
+    width: min(92%, 56rem);
+    margin: 2rem auto;
+}
+.card {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #d1e2d7;
+    border-radius: 0.75rem;
+    background: #FFF3D7;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+.button {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 0.35rem;
+    background: #FFBFC5;
+    color: white;
+    text-decoration: none;
+}
+/* ===== LOGIN PAGE ===== */
+body:has(.login-container) {
+    background-color: #f3f7f4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container {
+    width: 420px;
+    max-width: 90%;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+.login-container h2 {
+    text-align: center;
+    color: #204b3e;
+    margin-bottom: 15px;
+}
+.login-container .subtitle {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+.login-container label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #333;
+}
+.login-container input,
+.login-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 17px;
+    font-size: 13px;
+}
+.login-container .password-box {
+    display: flex;
+    gap: 7px;
+}
+.login-container .password-box input {
+    flex: 1;
+    min-width: 0;
+}
+.login-container .password-box button {
+    height: 40px;
+    padding: 0 15px;
+    background: #204b3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-container .login-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    background: #204b3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.login-container .login-btn:hover,
+.login-container .password-box button:hover {
+    background: #16382e;
+}
+/* ===== หน้าแรก ===== */
+.home-page {
+    text-align: center;
+}
+.home-page h1 {
+    text-align: center;
+    color: #204b3e;
+    margin-bottom: 15px;
+}
+.home-subtitle {
+    color: #204b3e;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.home-image {
+    width: 100%;
+    margin: 20px auto;
+}
+.home-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.home-page > p {
+    text-align: left;
+    margin-top: 20px;
+}
+footer {
+    margin-top: 20px;
+}
+/* ===== ระบบสไลด์ภาพหน้าแรก ===== */
+.home-page {
+    text-align: center;
+}
+.home-subtitle {
+    color: #204b3e;
+    margin-bottom: 15px;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+.slides img {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    flex-shrink: 0;
+}
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.slider button:hover {
+    background: rgba(0,0,0,0.7);
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+.dots {
+    text-align: center;
+    margin: 12px 0;
+}
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+}
+.dots span.active {
+    background: #204b3e;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+.slides img {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 10px 4px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+.dots span.active {
+    background: #204b3e;
+}

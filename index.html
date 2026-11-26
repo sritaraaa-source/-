@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>หน้าแรก | เที่ยวบ้านเรา</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <p class="site-name">เที่ยวบ้านเรา</p>
+    <nav aria-label="เมนูหลัก">
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="places.html">ที่เที่ยว</a></li>
+            <li><a href="food.html">อาหาร</a></li>
+            <li><a href="plan.html">วางแผนเที่ยว</a></li>
+            <li><a href="travel.html">ข้อมูลการเดินทาง</a></li>
+            <li><a href="login.html">เข้าสู่ระบบ</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="home-page">
+    <h1>เที่ยวบ้านเราในหนึ่งวัน</h1>
+    <h3 class="home-subtitle">
+        สถานที่ท่องเที่ยวจังหวัดประจวบคีรีขันธ์
+    </h3>
+    <!-- สไลด์ภาพสถานที่ท่องเที่ยว -->
+    <section class="slider">
+        <div class="slides">
+            <img src="images/aomanow.jpg" alt="อ่าวมะนาว">
+            <img src="images/Kaow.jpg" alt="เขาช่องกระจก">
+            <img src="images/KLM.jpg" alt="สะพานปลา">
+            <img src="images/lukmuang.jpg" alt="หลักเมือง">
+        </div>
+    </section>
+    <!-- จุดแสดงตำแหน่งภาพ -->
+    <div class="dots">
+        <span onclick="currentSlide(0)"></span>
+        <span onclick="currentSlide(1)"></span>
+        <span onclick="currentSlide(2)"></span>
+        <span onclick="currentSlide(3)"></span>
+    </div>
+    <p>
+        ชวนเดินตลาด ชิมอาหารพื้นถิ่น และพักชมวิวในชุมชน
+    </p>
+    <section class="card">
+        <a class="button" href="places.html">ดูแหล่งท่องเที่ยว</a>
+    </section>
+</main>
+<footer>
+    <p>ศรีธรา ยอดป้าน | ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+</footer>
+<!-- JavaScript ระบบเลื่อนภาพ -->
+<script>
+let slideIndex = 0;
+const slides = document.querySelector(".slides");
+const images = document.querySelectorAll(".slides img");
+const dots = document.querySelectorAll(".dots span");
+const totalSlides = images.length;
+// แสดงภาพ
+function showSlide(index) {
+    if (index >= totalSlides) {
+        slideIndex = 0;
+    } else if (index < 0) {
+        slideIndex = totalSlides - 1;
+    } else {
+        slideIndex = index;
+    }
+    slides.style.transform =
+        `translateX(-${slideIndex * 100}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[slideIndex].classList.add("active");
+}
+// ปุ่มก่อนหน้าและถัดไป
+function changeSlide(step) {
+    showSlide(slideIndex + step);
+}
+
+// เลือกภาพจากจุด
+function currentSlide(index) {
+    showSlide(index);
+}
+// เลื่อนภาพอัตโนมัติทุก 3 วินาที
+setInterval(function() {
+    changeSlide(1);
+}, 3000);
+
+// เริ่มต้นภาพแรก
+showSlide(0);
+
+</script>
+
+</body>
+</html>
+
+
